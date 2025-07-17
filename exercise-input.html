@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - Log Exercise</title>
+    <link rel="stylesheet" href="styles/exercise-input.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-small">💪</div>
+                <div class="header-info">
+                    <h1>Fitness Tracker</h1>
+                    <p id="welcomeText">Welcome back!</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn active" onclick="location.href='exercise-input.html'">Log Exercise</button>
+                <button class="nav-btn" onclick="location.href='history.html'">History</button>
+                <button class="nav-btn" onclick="location.href='profile.html'">Profile</button>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Exercise Form -->
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                <h2>Log Your Exercise</h2>
+                <p>Track your workout and see your progress</p>
+            </div>
+
+            <form id="exerciseForm" class="exercise-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Date</label>
+                        <input type="date" id="exerciseDate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Time</label>
+                        <input type="time" id="exerciseTime" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Exercise Type</label>
+                    <select id="exerciseType" required>
+                        <option value="">Select an exercise</option>
+                        <option value="Running">Running</option>
+                        <option value="Walking">Walking</option>
+                        <option value="Cycling">Cycling</option>
+                        <option value="Swimming">Swimming</option>
+                        <option value="Weightlifting">Weightlifting</option>
+                        <option value="Yoga">Yoga</option>
+                        <option value="Basketball">Basketball</option>
+                        <option value="Football">Football</option>
+                        <option value="Tennis">Tennis</option>
+                        <option value="Cardio">Cardio</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Duration (minutes)</label>
+                        <input type="number" id="duration" required min="1" placeholder="30">
+                    </div>
+                    <div class="form-group">
+                        <label>Intensity</label>
+                        <select id="intensity">
+                            <option value="low">Low</option>
+                            <option value="moderate" selected>Moderate</option>
+                            <option value="high">High</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Calories Burned</label>
+                        <div class="calories-input">
+                            <input type="number" id="calories" required min="1" placeholder="200">
+                            <button type="button" id="autoCalc" class="btn-auto">Auto</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Heart Rate (bpm) - Optional</label>
+                    <input type="number" id="heartRate" min="60" max="220" placeholder="120">
+                </div>
+
+                <div class="form-group">
+                    <label>Notes (optional)</label>
+                    <textarea id="notes" rows="3" placeholder="How did you feel during the workout?"></textarea>
+                </div>
+
+                <div class="form-actions">
+                    <button type="button" id="calculateBtn" class="btn-secondary">Calculate Results</button>
+                    <button type="submit" class="btn-primary">Save Exercise</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="js/exercise-input.js"></script>
+    <script src="js/fitness-calculations.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>

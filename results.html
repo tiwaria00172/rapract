@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - Results</title>
+    <link rel="stylesheet" href="styles/results.css">
+</head>
+<body>
+    <div class="container">
+        <div class="results-header">
+            <button id="backBtn" class="btn-back" onclick="location.href='exercise-input.html'">← Back</button>
+            <div>
+                <h1>Your Fitness Results</h1>
+                <p>Based on your latest workout data</p>
+            </div>
+        </div>
+
+        <!-- Main Results -->
+        <div class="results-grid">
+            <div class="result-card">
+                <h3>BMI</h3>
+                <div id="bmiValue" class="result-value">22.5</div>
+                <div id="bmiCategory" class="result-label">Normal weight</div>
+            </div>
+            <div class="result-card">
+                <h3>Calories Burned</h3>
+                <div id="caloriesBurned" class="result-value orange">250</div>
+                <div class="result-label">kcal today</div>
+            </div>
+            <div class="result-card">
+                <h3>Daily Calorie Goal</h3>
+                <div id="dailyGoal" class="result-value green">2200</div>
+                <div class="result-label">kcal per day</div>
+            </div>
+            <div class="result-card">
+                <h3>Fitness Score</h3>
+                <div id="fitnessScore" class="result-value blue">75</div>
+                <div class="result-label">out of 100</div>
+            </div>
+        </div>
+
+        <!-- Heart Rate Zones -->
+        <div class="detail-card">
+            <h2>Heart Rate Zones</h2>
+            <div class="hr-zones">
+                <div class="hr-zone gray">
+                    <div class="hr-info">
+                        <div class="hr-title">Resting Zone</div>
+                        <div class="hr-desc">Recovery & Rest</div>
+                    </div>
+                    <div class="hr-value">&lt; <span id="restingHR">95</span> bpm</div>
+                </div>
+                <div class="hr-zone green">
+                    <div class="hr-info">
+                        <div class="hr-title">Fat Burn Zone</div>
+                        <div class="hr-desc">Light Activity</div>
+                    </div>
+                    <div class="hr-value"><span id="fatBurnMin">95</span> - <span id="fatBurnMax">133</span> bpm</div>
+                </div>
+                <div class="hr-zone orange">
+                    <div class="hr-info">
+                        <div class="hr-title">Cardio Zone</div>
+                        <div class="hr-desc">Aerobic Training</div>
+                    </div>
+                    <div class="hr-value"><span id="cardioMin">133</span> - <span id="cardioMax">162</span> bpm</div>
+                </div>
+                <div class="hr-zone red">
+                    <div class="hr-info">
+                        <div class="hr-title">Peak Zone</div>
+                        <div class="hr-desc">Maximum Effort</div>
+                    </div>
+                    <div class="hr-value"><span id="peakMin">162</span> - <span id="peakMax">190</span> bpm</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recommendations -->
+        <div class="detail-card">
+            <h2>Recommendations</h2>
+            <div id="recommendations" class="recommendations">
+                <div class="recommendation">
+                    <div class="rec-dot"></div>
+                    <p>Try to increase workout frequency to at least 3-4 times per week.</p>
+                </div>
+                <div class="recommendation">
+                    <div class="rec-dot"></div>
+                    <p>Stay hydrated and ensure adequate rest between workouts.</p>
+                </div>
+                <div class="recommendation">
+                    <div class="rec-dot"></div>
+                    <p>Consider tracking your heart rate to optimize workout intensity.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Metabolic Summary -->
+        <div class="metabolic-summary">
+            <h2>Metabolic Summary</h2>
+            <div class="metabolic-grid">
+                <div class="metabolic-card blue">
+                    <div id="bmrValue" class="metabolic-value">1650</div>
+                    <div class="metabolic-title">Basal Metabolic Rate</div>
+                    <div class="metabolic-desc">Calories burned at rest per day</div>
+                </div>
+                <div class="metabolic-card green">
+                    <div id="dailyNeedsValue" class="metabolic-value">2200</div>
+                    <div class="metabolic-title">Daily Calorie Needs</div>
+                    <div class="metabolic-desc">Including your activity level</div>
+                </div>
+                <div class="metabolic-card orange">
+                    <div id="exerciseCaloriesValue" class="metabolic-value">250</div>
+                    <div class="metabolic-title">Exercise Calories</div>
+                    <div class="metabolic-desc">Burned from today's workout</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/results.js"></script>
+    <script src="js/fitness-calculations.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>

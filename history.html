@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Tracker - History</title>
+    <link rel="stylesheet" href="styles/history.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="header-left">
+                <div class="logo-small">💪</div>
+                <div class="header-info">
+                    <h1>Fitness Tracker</h1>
+                    <p id="welcomeText">Welcome back!</p>
+                </div>
+            </div>
+            <nav class="nav">
+                <button class="nav-btn" onclick="location.href='exercise-input.html'">Log Exercise</button>
+                <button class="nav-btn active" onclick="location.href='history.html'">History</button>
+                <button class="nav-btn" onclick="location.href='profile.html'">Profile</button>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="history-header">
+            <h2>Exercise History</h2>
+            <p id="historyCount">0 workouts tracked</p>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="history-stats">
+            <div class="stat-card blue">
+                <div id="totalWorkouts" class="stat-value">0</div>
+                <div class="stat-label">Total Workouts</div>
+            </div>
+            <div class="stat-card orange">
+                <div id="totalCaloriesHistory" class="stat-value">0</div>
+                <div class="stat-label">Total Calories Burned</div>
+            </div>
+            <div class="stat-card green">
+                <div id="totalHours" class="stat-value">0h</div>
+                <div class="stat-label">Total Exercise Time</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="history-filters">
+            <input type="text" id="searchExercises" placeholder="Search exercises or notes..." class="search-input">
+            <select id="filterIntensity" class="filter-select">
+                <option value="all">All Intensities</option>
+                <option value="low">Low Intensity</option>
+                <option value="moderate">Moderate Intensity</option>
+                <option value="high">High Intensity</option>
+            </select>
+        </div>
+
+        <!-- Exercise List -->
+        <div id="exerciseList" class="exercise-list">
+            <div class="no-exercises">
+                <p>No exercises found</p>
+                <small>Start logging your workouts!</small>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/history.js"></script>
+    <script src="js/storage.js"></script>
+</body>
+</html>
